@@ -1,11 +1,24 @@
-import "bootstrap";
-import "./style.css";
 
+function generadorDeDominios(pronombre, adjetivo, nombre) {
+  let combinacionesDeDominios = [];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+  for (let i = 0; i < pronombre.length; i++) {
+    for (let j = 0; j < adjetivo.length; j++) {
+      for (let k = 0; k < nombre.length; k++) {
+        combinacionesDeDominios.push(pronombre[i] + adjetivo[j] + nombre[k]);
+      }
+    }
+  }
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  return combinacionesDeDominios;
+}
+
+let pronombre = ['the', 'our'];
+let adjetivo = ['great', 'big'];
+let nombre = ['jogger', 'racoon'];
+
+let resultados = generadorDeDominios(pronombre, adjetivo, nombre);
+
+for (let dominio of resultados) {
+  console.log(dominio + ".com");
+}
